@@ -1,0 +1,45 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Upload Form Styles */
+.upload-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #e0e0e0;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.file-label span {
+    margin-right: 8px;
+}
+
+.password-input {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* File List Styles */
+.file-list {
+    margin-top: 40px;
+}
+
+.file-list h2 {
+    font-size: 24px;
+}
