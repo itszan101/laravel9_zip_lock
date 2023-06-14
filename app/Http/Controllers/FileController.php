@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Auth;
 
 class FileController extends Controller
 {
@@ -40,6 +41,7 @@ class FileController extends Controller
         $fileModel->name = $file->getClientOriginalName();
         $fileModel->password = $password;
         $fileModel->path = $encryptedFilename;
+        $fileModel->user_id = Auth::id();
         $fileModel->save();
 
         return redirect()->back()->with('success', 'File uploaded successfully!');

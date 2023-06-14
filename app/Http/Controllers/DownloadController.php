@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Auth;
 use ZipArchive;
 
 class DownloadController extends Controller
@@ -13,6 +14,11 @@ class DownloadController extends Controller
     public function download(Request $request, $id)
     {
         $file = File::findOrFail($id);
+
+        // Check if the authenticated user is the owner of the file
+        if ($file->user_id !== Auth::id()) {
+            return redirect()->back()->with('error', 'You are not authorized to download this file');
+        }
 
         $password = $request->input('password');
 
