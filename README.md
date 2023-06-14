@@ -4,3 +4,4 @@
 -   zip encrypted password
 -   file is encrypted when is stored (unreadable) to storage
 -   password auth to upload and download
+-   jetstream for auth system
