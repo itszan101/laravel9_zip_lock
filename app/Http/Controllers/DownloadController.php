@@ -15,11 +15,6 @@ class DownloadController extends Controller
     {
         $file = File::findOrFail($id);
 
-        // Check if the authenticated user is the owner of the file
-        if ($file->user_id !== Auth::id()) {
-            return redirect()->back()->with('error', 'You are not authorized to download this file');
-        }
-
         $password = $request->input('password');
 
         // Verify the password

@@ -10,13 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class FileController extends Controller
 {
-    public function index()
-    {
-        $files = File::all();
-
-        return view('file.index', compact('files'));
-    }
-
     public function upload(Request $request)
     {
         $validatedData = $request->validate([
